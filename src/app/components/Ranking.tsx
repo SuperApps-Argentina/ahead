@@ -4,17 +4,17 @@ import "./module-ranking.css";
 
 interface RankingProps {
   position: number;
-  change: 'Aumentar' | 'Disminuir' | 'Igual';
+  change: 'Increase' | 'Decrease' | 'Equal';
 }
 
 export const Ranking: React.FC<RankingProps> = ({ position, change }) => {
   const renderIcon = () => {
     switch (change) {
-      case 'Aumentar'://poner en ingles 
+      case 'Increase'://poner en ingles 
         return <AiFillCaretUp />;
-      case 'Disminuir':
+      case 'Decrease':
         return <AiFillCaretDown />;
-      case 'Igual':
+      case 'Equal':
         return <AiOutlineMinus />;
       default:
         return null;
