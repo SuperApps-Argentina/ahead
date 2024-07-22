@@ -1,0 +1,69 @@
+.level-container {
+    border: 2px solid #2C2154; /* Borde violeta oscuro */
+    background: linear-gradient(#1B1337,
+    #372D56 ,#1B1337);
+    width: 322px;
+    height: 192px;
+    padding: 20px; /* Espacio interior para separación del borde */
+    border-radius: 18px; /* Bordes redondeados */
+    box-shadow: -1px 8px 12px -3px rgba(255, 255, 255, 0.692);
+    -webkit-caja-sombra: -1px 8px 12px -3px rgba(255,255,255,0.75);
+    -moz-caja-sombra: -1px 8px 12px -3px rgba(255,255,255,0.75);;
+  
+    /* Estilos para centrar el contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .circle {
+    width: 15px;
+    height: 15px;
+    border: 4px solid orange; /* Circulo naranja */
+    border-radius: 50%; /* Forma circular */
+    display: inline-block;
+    margin-right: 5px; /* Espacio a la derecha del círculo */
+  }
+  
+  .total {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espacio bajo el contenedor de Total */
+  }
+  
+  .total h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .metros {
+    margin-top: 10px; /* Espacio arriba de la distancia en metros */
+    color:white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .progress {
+    position: relative; /* Añadido para posicionar el texto de "Aun no ha llegado al objetivo" */
+    width: 250px;
+    height: 12px; /* Altura de la barra de progreso */
+    background-color: black; /* Fondo negro detrás de la barra de progreso */
+    margin-bottom: 10px; /* Espacio bajo la barra de progreso */
+    border-radius: 6px;
+  }
+  
+  .progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 12px;
+    background: linear-gradient(to right, #D95F80, #F26D3D, #F28907); /* Degradado */
+    border-radius: 6px;
+  }
+  
+  .object-nivel {
+    color: white;
+    text-align: center;
+  }
