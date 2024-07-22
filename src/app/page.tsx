@@ -1,6 +1,7 @@
 import React from 'react';
-import Ranking from "./components/Ranking";
-import Avatar from "./components/avatar/avatar";
+import Ranking from "../components/Ranking";
+import Avatar from "../components/avatar/Avatar";
+import DailyProgress from "../components/daily/DailyProgress"
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Avatar imageUrl="https://i.pinimg.com/564x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg" level={18} />
       {/* <Avatar level={10} /> Este usará la imagen predeterminada */}
       <Ranking position={46896} change="Aumentar" />
+      <DailyProgress/>
     </main>
   );
 }
