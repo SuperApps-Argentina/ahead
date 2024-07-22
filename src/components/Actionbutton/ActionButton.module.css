@@ -1,0 +1,55 @@
+/* ActionButton.module.css */
+.actionButton {
+  width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, #1B1337 0%, #372D56 50%, #1B1337 100%);
+    color: white;
+}
+
+
+
+.small::before {
+  /* Ajusta el tamaño y estilo del botón pequeño */
+  content: "";
+  position: absolute;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #B4509A 100%, #FFA701 100%, #FFFFFF 100%);
+  padding: 3px;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+
+}
+
+.large::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #792AFF 100%, #A174F7 100%, #FFFFFF 100%);
+  padding: 3px;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+}
