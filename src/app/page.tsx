@@ -1,6 +1,4 @@
 "use client";
-
-import LevelProgress from "../components/Levelprogress/LevelProgress";
 import ActionButton from "../components/Actionbutton/Actionbutton";
 import { FaBiking, FaUser, FaTrophy } from 'react-icons/fa';
 
@@ -19,7 +17,7 @@ const Home: React.FC = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <LevelProgress objetivo={80.000} distanciaActual={75.214} />
+      
       <div className="flex space-x-8">
         <ActionButton
           icon={<FaUser />}
