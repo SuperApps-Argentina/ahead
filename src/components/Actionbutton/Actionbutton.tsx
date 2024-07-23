@@ -1,7 +1,6 @@
 "use client";
-
 import React from 'react';
-import styles from '../Actionbutton/ActionButton.module.css';
+import styles from './ActionButton.module.css';
 
 interface ActionButtonProps {
   icon: React.ReactNode;

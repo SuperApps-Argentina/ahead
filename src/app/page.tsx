@@ -1,6 +1,7 @@
 "use client";
 import ActionButton from "../components/Actionbutton/Actionbutton";
 import { FaBiking, FaUser, FaTrophy } from 'react-icons/fa';
+import styles from '../components/Actionbutton/ActionButton.module.css';
 
 const Home: React.FC = () => {
   const handleProfileClick = () => {
@@ -17,20 +18,19 @@ const Home: React.FC = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
-      <div className="flex space-x-8">
+      <div className={styles.conteinerbuttons}>
         <ActionButton
-          icon={<FaUser />}
+          icon={<FaUser className={styles.IconSmall} />}
           size="small"
           onClick={handleProfileClick}
         />
         <ActionButton
-          icon={<FaBiking />}
+          icon={<FaBiking className={styles.IconLarge} />}
           size="large"
           onClick={handleStartBikeClick}
         />
-        <ActionButton
-          icon={<FaTrophy />}
+        <ActionButton 
+          icon={<FaTrophy className={styles.IconSmall} />}
           size="small"
           onClick={handleTop10Click}
         />
