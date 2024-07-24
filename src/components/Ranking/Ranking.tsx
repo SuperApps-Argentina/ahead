@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiFillCaretUp, AiFillCaretDown, AiOutlineMinus } from "react-icons/ai";
-import "./module-ranking.css";
+import styles from './Ranking.module.css';
 
 interface RankingProps {
   position: number;
@@ -23,11 +23,11 @@ export const Ranking: React.FC<RankingProps> = ({ position, change }) => {
 
   return (
     <div>
-      <div className="container-ranking">
-        <div className="icon-ranking">
+      <div className={styles.container}>
+        <div className={styles.icon}>
           {renderIcon()}
         </div>
-        <div className="number-ranking">
+        <div className={styles.number}>
           <h5>#{position.toLocaleString()}</h5>
         </div>
       </div>

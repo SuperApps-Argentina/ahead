@@ -1,6 +1,6 @@
 import React from 'react';
-import Ranking from "./components/Ranking";
-import Avatar from "./components/avatar/avatar";
+import Ranking from "../components/Ranking/Ranking";
+import Avatar from "@/components/Avatar/Avatar";
 
 export default function Home() {
   return (
