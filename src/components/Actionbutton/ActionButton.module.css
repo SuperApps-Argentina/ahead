@@ -1,4 +1,4 @@
-.conteinerbuttons{
+.containerbuttons{
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -61,7 +61,6 @@
   background: linear-gradient(319.29deg, #792AFF 5.26%, #A174F7 77.73%, #FFFFFF 98.8%);
   z-index: -1; 
 }
-
 
 .IconLarge{
 font-size: 2.5rem;

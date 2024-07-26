@@ -18,7 +18,7 @@ const Home: React.FC = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className={styles.conteinerbuttons}>
+      <div className={styles.containerbuttons}>
         <ActionButton
           icon={<FaUser className={styles.IconSmall} />}
           size="small"
