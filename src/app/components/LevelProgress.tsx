@@ -10,9 +10,9 @@ const LevelProgress: React.FC<LevelProgressProps> = ({ objetivo, distanciaActual
   const porcentaje = (distanciaActual / objetivo) * 100;
 
   return (
-    <div className={styles['level-container']}>
+    <div className={styles['levelContainer']}>
       <div className={styles.total}>
-        <div className={styles.circle}></div> {/* Elemento para el círculo sin relleno */}
+        <div className={styles.circle}></div> {}
         <h1>Total</h1>
       </div>
       <div className={styles.metros}>
@@ -20,14 +20,14 @@ const LevelProgress: React.FC<LevelProgressProps> = ({ objetivo, distanciaActual
       </div>
       <div className={styles.progress}>
         <div
-          className={styles['progress-bar']}
+          className={styles['progressBar']}
           style={{
             width: `${porcentaje}%`,
           }}
         ></div>
       </div>
-      <div className={styles['object-nivel']}>
-        <p className={styles['object-nivel-p']}>
+      <div className={styles['objectNivel']}>
+        <p className={styles['objectNivelp']}>
           Objetivo de nivel: {objetivo} m
         </p>
       </div>
