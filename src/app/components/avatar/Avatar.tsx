@@ -1,32 +1,23 @@
-// Importa React y los hooks necesarios
 import React, { useState, useEffect } from 'react';
 
-// Importa el archivo CSS específico para estilizar este componente
 import "./avatar-modules.css";
 
-// Importa el componente Image de Next.js
 import Image from 'next/image';
 
-// Importa la imagen SVG predeterminada
 import defaultImageUrl from '../../../img/avatarDefaultIMG.svg';
 
-// Define los tipos de las props que el componente Avatar espera recibir
 interface AvatarProps {
-  imageUrl?: string; // Propiedad opcional para la URL de la imagen del avatar
-  level: number; // Propiedad requerida para el nivel del usuario
+  imageUrl?: string; 
+  level: number;
 }
 
-// Define el componente Avatar como un componente funcional de React
 const Avatar: React.FC<AvatarProps> = ({ imageUrl, level }) => {
-  // Estado para manejar la URL de la imagen actual
   const [currentImageUrl, setCurrentImageUrl] = useState(imageUrl || defaultImageUrl);
 
-  // Efecto para actualizar la URL de la imagen cuando imageUrl cambie
   useEffect(() => {
     setCurrentImageUrl(imageUrl || defaultImageUrl);
   }, [imageUrl]);
 
-  // Maneja el error de carga de la imagen
   const handleImageError = () => {
     setCurrentImageUrl(defaultImageUrl);
   };
@@ -51,6 +42,5 @@ const Avatar: React.FC<AvatarProps> = ({ imageUrl, level }) => {
   );
 }
 
-// Exporta el componente Avatar para que pueda ser utilizado en otros archivos
 export default Avatar;
 
