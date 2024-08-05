@@ -29,5 +29,4 @@ const Avatar: React.FC<AvatarProps> = ({ imageUrl, level }) => {
   );
 }
 
-// Exporta el componente Avatar para que pueda ser utilizado en otros archivos
 export default Avatar;
