@@ -3,6 +3,7 @@ import Ranking from "../components/Ranking";
 import Avatar from "../components/avatar/Avatar";
 import DailyProgress from "../components/daily/DailyProgress"
 
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

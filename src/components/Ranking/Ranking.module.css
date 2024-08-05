@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    align-items: center;
+    background-color: rgb(21, 12, 50);
+    border-radius: 4px;  
+}
+  
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; /* Ajusta el tamaño del círculo según sea necesario */
+  height: 20px;
+  background-color: rgb(0, 170, 119); /* El círculo será de color verde */
+  border-radius: 50%; /* Hace que el contenedor sea un círculo */
+  color: white; /* Color del icono dentro del círculo */
+  margin-right: 1px; /* Ajusta el margen según sea necesario */
+  margin-left: 10px;
+}
+  
+.number h5 {
+  color: white;
+  margin: 5px;
+  font-weight:bold;
+  margin-right: 10px;
+}
