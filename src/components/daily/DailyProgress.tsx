@@ -1,9 +1,11 @@
 import React from "react";
 
-
 import { FaCaretUp, FaCaretDown, FaDotCircle } from "react-icons/fa";
 
 import styles from "./DailyProgress.module.css";
+
+const DEFAULT_OBJECTIVE = 5.000;
+const DEFAULT_DISTANCE = 5.564;
 
 interface DailyProgressProps {
   objective: number;
@@ -12,9 +14,9 @@ interface DailyProgressProps {
 
 const DailyProgress: React.FC<DailyProgressProps> = ({ objective, distance }) => {
 
-  const validObjective = objective ?? 5.000;
+  const validObjective = objective ?? DEFAULT_OBJECTIVE;
 
-  const validDistance = distance ?? 5.564;
+  const validDistance = distance ?? DEFAULT_DISTANCE;
 
   const hasReachedObjective = validDistance >= validObjective;
 
@@ -23,22 +25,22 @@ const DailyProgress: React.FC<DailyProgressProps> = ({ objective, distance }) =>
   return (
     <div className={styles.containerDaily}>
       
-      <div className={styles.containerDailyHoy}>
+      <div className={styles.containerDailyToday}>
         
-        <h4 className={styles.titleHoy}>
+        <h4 className={styles.titleToday}>
           <FaDotCircle style={{ color: "#828bfdff" }} /> Hoy
         </h4>
         
-        <h4 className={styles.metrosHoy}>
+        <h4 className={styles.metersToday}>
           {validDistance.toLocaleString()} m
         </h4>
       </div>
       
-      <div className={styles.containerDivisor}></div> 
+      <div className={styles.containerDivider}></div> 
       
-      <div className={styles.dailyObjetivoDiario}>
+      <div className={styles.dailyObjective}>
         
-        <h4 className={styles.objetivoDiario}>
+        <h4 className={styles.dailyObjectiveHeader}>
           Objetivo diario: {validObjective.toLocaleString()} m
         </h4>
         
