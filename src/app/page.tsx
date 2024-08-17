@@ -1,15 +1,46 @@
-import React from 'react';
-import Ranking from "../components/Ranking";
-import Avatar from "../components/avatar/Avatar";
-import DailyProgress from "../components/daily/DailyProgress"
+"use client";
+import Ranking from "../components/Ranking/Ranking";
+import Avatar from "@/components/Avatar/Avatar";
+import ActionButton from "../components/Actionbutton/Actionbutton";
+import { FaBiking, FaUser, FaTrophy } from 'react-icons/fa';
+import styles from '../components/Actionbutton/ActionButton.module.css';
 
+const Home: React.FC = () => {
+  const handleProfileClick = () => {
+    console.log('Perfil');
+  };
 
-export default function Home() {
+  const handleStartBikeClick = () => {
+    console.log('Inicio de trayecto de bici');
+  };
+
+  const handleTop10Click = () => {
+    console.log('Top 10');
+  };
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <Avatar imageUrl="https://i.pinimg.com/564x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg" level={18} />
-      <Ranking position={46896} change="Aumentar" />
-      <DailyProgress objective={4000} distance={1200}/>
+      <Ranking position={46896} change="Increase" />
+      <div className={styles.containerbuttons}>
+        <ActionButton
+          icon={<FaUser className={styles.IconSmall} />}
+          size="small"
+          onClick={handleProfileClick}
+        />
+        <ActionButton
+          icon={<FaBiking className={styles.IconLarge} />}
+          size="large"
+          onClick={handleStartBikeClick}
+        />
+        <ActionButton 
+          icon={<FaTrophy className={styles.IconSmall} />}
+          size="small"
+          onClick={handleTop10Click}
+        />
+      </div>
     </main>
   );
-}
+};
+
+export default Home;
