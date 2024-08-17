@@ -40,9 +40,14 @@ const DailyProgress: React.FC<DailyProgressProps> = ({ objective, distance }) =>
       
       <div className={styles.dailyObjective}>
         
-        <h4 className={styles.dailyObjectiveHeader}>
-          Objetivo diario: {validObjective.toLocaleString()} m
-        </h4>
+        <div className={styles.dailyObjectiveHeader}>
+          <p>
+            Objetivo diario: 
+          </p>
+          <p>
+            {validObjective.toLocaleString()} m
+          </p>
+        </div>
         
         <div className={styles.achievement}>
           
