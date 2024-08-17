@@ -1,9 +1,8 @@
 /* DailyProgress.module.css */
 
 .containerDaily {
-    width: 15rem;
-    height: 6rem;
-    padding: 1rem;
+    width: 322px;
+    padding: 0.5rem;
     background-color: rgb(21, 12, 50);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
