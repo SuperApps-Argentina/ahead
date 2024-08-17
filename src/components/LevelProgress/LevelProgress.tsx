@@ -15,7 +15,7 @@ const LevelProgress: React.FC<LevelProgressProps> = ({ objetivo, distanciaActual
         <div className={styles.circle}></div> {}
         <h1>Total</h1>
       </div>
-      <div className={styles.metros}>
+      <div className={styles.meters}>
         <h6>{distanciaActual} m</h6>
       </div>
       <div className={styles.progress}>
@@ -26,8 +26,8 @@ const LevelProgress: React.FC<LevelProgressProps> = ({ objetivo, distanciaActual
           }}
         ></div>
       </div>
-      <div className={styles['objectNivel']}>
-        <p className={styles['objectNivelp']}>
+      <div className={styles['objectLevel']}>
+        <p>
           Objetivo de nivel: {objetivo} m
         </p>
       </div>

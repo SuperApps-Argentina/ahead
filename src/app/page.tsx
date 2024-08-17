@@ -3,8 +3,7 @@ import Ranking from "../components/Ranking/Ranking";
 import Avatar from "@/components/Avatar/Avatar";
 import ActionButton from "../components/Actionbutton/Actionbutton";
 import { FaBiking, FaUser, FaTrophy } from 'react-icons/fa';
-import Image from "next/image";
-import LevelProgress from "./components/LevelProgress";
+import LevelProgress from "@/components/LevelProgress/LevelProgress";
 import styles from '../components/Actionbutton/ActionButton.module.css';
 import DailyProgress from "@/components/daily/DailyProgress";
 
