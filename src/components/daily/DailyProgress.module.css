@@ -1,0 +1,77 @@
+/* DailyProgress.module.css */
+
+.containerDaily {
+    width: 15rem;
+    height: 6rem;
+    padding: 1rem;
+    background-color: rgb(21, 12, 50);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+  }
+  
+  .containerDailyToday {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  
+  .titleToday {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8em;
+    text-align: start;
+  }
+  
+  .metersToday {
+    font-size: 1.2em;
+    color: white;
+    width: 100%;
+    font-weight: bold;
+    text-align: start;
+  }
+  
+  .containerDivider {
+    height: 4rem;
+    background-color: #2c2153ff;
+    margin: 0 16px;
+    width: 3px;
+  }
+  
+  .dailyObjective {
+    width: 100%;
+  }
+  
+  .dailyObjectiveHeader {
+    font-size: 0.8em;
+    text-align: start;
+  }
+  
+  .achievement {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    width: 100%;
+  }
+  
+  .icon {
+    margin-right: 4px;
+  }
+  
+  .difference {
+    font-weight: bold;
+  }
+  
+  .green {
+    color: green;
+    font-size: .9rem;
+  }
+  
+  .red {
+    color: red;
+    font-size: .9rem;
+  }
+  
