@@ -1,0 +1,69 @@
+.levelContainer {
+    border: 2px solid #2C2154; 
+    background: linear-gradient(#1B1337,
+    #372D56 ,#1B1337);
+    width: 322px;
+    height: 192px;
+    padding: 20px; 
+    border-radius: 18px; 
+    box-shadow: -1px 8px 12px -3px rgba(255, 255, 255, 0.692);
+    -webkit-caja-sombra: -1px 8px 12px -3px rgba(255,255,255,0.75);
+    -moz-caja-sombra: -1px 8px 12px -3px rgba(255,255,255,0.75);;
+  
+    /* Estilos para centrar el contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .circle {
+    width: 15px;
+    height: 15px;
+    border: 4px solid orange; 
+    border-radius: 50%; 
+    display: inline-block;
+    margin-right: 5px; 
+  }
+  
+  .total {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+  }
+  
+  .total h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .meters {
+    margin-top: 10px; 
+    color:white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .progress {
+    position: relative;
+    width: 250px;
+    height: 12px; 
+    background-color: black; 
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+  
+  .progressBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 12px;
+    background: linear-gradient(to right, #D95F80, #F26D3D, #F28907);
+    border-radius: 6px;
+  }
+  
+  .objectLevel {
+    color: white;
+    text-align: center;
+  }
