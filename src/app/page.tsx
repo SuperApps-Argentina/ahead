@@ -6,6 +6,8 @@ import { FaBiking, FaUser, FaTrophy } from 'react-icons/fa';
 import LevelProgress from "@/components/LevelProgress/LevelProgress";
 import styles from '../components/Actionbutton/ActionButton.module.css';
 import DailyProgress from "@/components/Daily/DailyProgress";
+import 'leaflet/dist/leaflet.css';
+
 
 const Home: React.FC = () => {
   const handleProfileClick = () => {
