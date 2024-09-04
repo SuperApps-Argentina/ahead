@@ -31,12 +31,16 @@ const Home: React.FC = () => {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-center gap-5 ">
+      <div className="container-profile">
       <Avatar imageUrl="https://i.pinimg.com/564x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg" level={18} />
       <Ranking position={46896} change="Increase" />
+      </div>
+      
+      <DailyProgress objective={5000} distance={5564} /> 
       <LevelProgress objetivo={80.000} distanciaActual={75.214} />
-      <DailyProgress objective={5000} distance={5564} />  
-       <div className={styles.containerbuttons}>
+       
+      <div className={styles.containerbuttons}>
         <ActionButton
           icon={<FaUser className={styles.IconSmall} />}
           size="small"
