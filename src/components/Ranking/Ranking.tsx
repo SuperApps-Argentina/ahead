@@ -10,7 +10,7 @@ interface RankingProps {
 export const Ranking: React.FC<RankingProps> = ({ position, change }) => {
   const renderIcon = () => {
     switch (change) {
-      case 'Increase'://poner en ingles 
+      case 'Increase':
         return <AiFillCaretUp />;
       case 'Decrease':
         return <AiFillCaretDown />;
