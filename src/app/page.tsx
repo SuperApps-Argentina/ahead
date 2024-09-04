@@ -1,4 +1,5 @@
 "use client";
+
 import Ranking from "../components/Ranking/Ranking";
 import Avatar from "@/components/Avatar/Avatar";
 import ActionButton from "../components/Actionbutton/Actionbutton";
@@ -6,8 +7,17 @@ import { FaBiking, FaUser, FaTrophy } from 'react-icons/fa';
 import LevelProgress from "@/components/LevelProgress/LevelProgress";
 import styles from '../components/Actionbutton/ActionButton.module.css';
 import DailyProgress from "@/components/Daily/DailyProgress";
+import { Logout } from "@/components/Logout/Logout";
+import { useSession } from "next-auth/react";
 
 const Home: React.FC = () => {
+  const { data: session, status } = useSession();
+  console.log("session", session, status);
+  
+  if(status !== 'authenticated') {
+    return null;
+  }
+
   const handleProfileClick = () => {
     console.log('Perfil');
   };
@@ -26,7 +36,7 @@ const Home: React.FC = () => {
       <Ranking position={46896} change="Increase" />
       <LevelProgress objetivo={80.000} distanciaActual={75.214} />
       <DailyProgress objective={5000} distance={5564} />  
-      <div className={styles.containerbuttons}>
+       <div className={styles.containerbuttons}>
         <ActionButton
           icon={<FaUser className={styles.IconSmall} />}
           size="small"
@@ -43,6 +53,7 @@ const Home: React.FC = () => {
           onClick={handleTop10Click}
         />
       </div>
+      <Logout/>
     </main>
   );
 };

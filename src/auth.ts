@@ -5,9 +5,26 @@ import Credentials from "next-auth/providers/credentials"
 //import { saltAndHashPassword } from "@/utils/password"
 
 
-
+export const protectedRoutes = ["/"]
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  session: {
+    strategy: 'jwt',
+  },
+  callbacks: { 
+    async authorized({ auth, request: {nextUrl} }) {
+      const isLoggedIn = !!auth?.user;
+      const isOnProtectedRoute = protectedRoutes.includes(nextUrl.pathname);
+
+      if (isOnProtectedRoute) {
+        if (!isLoggedIn) {
+          return false;
+        }
+        return true;
+      }
+      return true;
+    }
+  },
   providers: [
     Credentials({
       credentials: {
@@ -22,6 +39,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         // logic to verify if user exists
         //user = await getUserFromDb(credentials.email, pwHash)
 
+        // FIXME: This will be replaced with a database lookup
         if (credentials.email === 'johndoe@example.com' && credentials.password === '1234') {
           user = {email: 'johndoe@example.com', id: '1234', name: 'John Doe', image: 'https://media.cnn.com/api/v1/images/stellar/prod/190724142219-01-rutger-hauer-blade-runner-restricted.jpg?q=w_1110,c_fill/f_webp'};
         }
@@ -33,8 +51,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
  
         // return user object with the their profile data
         return user
-      },
-
+      }
     })
   ],
 })
