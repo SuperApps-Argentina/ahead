@@ -1,21 +1,36 @@
-import RankingItem from '../../components/RankingItem/RankingItem';
-import styles from './styles/RankingList.module.css';
+import React from 'react';
+import styles from './RankingList.module.css';
 
 interface User {
   name: string;
   score: string;
-  avatar: string;
+  imgSrc: string;
+  rank: number;
 }
 
 interface RankingListProps {
-  users: User[];
+  otherUsers: User[];
 }
 
-const RankingList: React.FC<RankingListProps> = ({ users }) => {
+const RankingList: React.FC<RankingListProps> = ({ otherUsers }) => {
   return (
-    <div className={styles.list}>
-      {users.map((user, index) => (
-        <RankingItem key={user.name} position={index + 1} {...user} />
+    <div className={styles.otherUsers}>
+      {otherUsers.map((user, index) => (
+        <div
+          key={user.rank}
+          className={`${styles.otherUser} ${index % 2 === 1 ? styles.alternate : ''}`} // Aplicar fondo violeta a filas alternas
+        >
+          <span className={styles.userRank}>{user.rank}</span>
+          <img
+            src={user.imgSrc || '../img/avatarDefaultIMG.svg'}
+            alt={`${user.name}'s profile`}
+            className={styles.userImage}
+          />
+          <div className={styles.userInfo}>
+            <span className={styles.userName}>{user.name}</span>
+          </div>
+          <span className={styles.userKm}>{user.score} km</span>
+        </div>
       ))}
     </div>
   );

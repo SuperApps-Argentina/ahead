@@ -1,6 +1,68 @@
-.list {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-  }
-  
+.otherUsers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  border: 2px solid #2C2154; /* Borde de 2px con color especificado */
+  box-shadow: 0px 4px 4px 0px #221845; /* Sombra con los valores dados */
+  width: 40rem;
+}
+
+
+.otherUser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alineación horizontal del contenido */
+  background-color: transparent; /* Fondo oscuro normal */
+  padding: 10px 20px; /* Espaciado dentro del rectángulo */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 500px; /* Controlamos el ancho máximo */
+  color: #fff; /* Color del texto blanco por defecto */
+  box-sizing: border-box; /* Asegura que el padding y border se incluyan en el ancho total */
+}
+
+
+.otherUser.alternate {
+  background-color: #4b0082; /* Fondo violeta para los alternados */
+}
+
+.userRank {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 20px; /* Separación entre el rank y la imagen */
+}
+
+.userImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinear nombre e info a la izquierda */
+  flex: 1; /* Ocupar todo el espacio disponible excepto el rank y km */
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.userScore {
+  font-size: 14px;
+  color: #888;
+}
+
+.userKm {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-left: auto; /* Empuja el valor de km hacia la derecha */
+}
