@@ -1,4 +1,4 @@
-import styles from './styles/RankingCard.module.css';
+import styles from './RankingCard.module.css';
 
 interface RankingCardProps {
   name: string;
