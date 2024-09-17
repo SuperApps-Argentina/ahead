@@ -1,5 +1,5 @@
 import { Header } from '@/components/Header/Header'
-import RankingCard from '@/components/RankingCard/RankingCard'
+import RankingCard from '@/components/TopThreeRanking/TopThreeRanking'
 import RankingList from '@/components/RankingList/RankingList';
 import { RankingSwitch } from '@/components/RankingSwitch/RankingSwitch'
 import React from 'react'

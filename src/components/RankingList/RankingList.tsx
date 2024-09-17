@@ -14,7 +14,8 @@ interface RankingListProps {
 
 const RankingList: React.FC<RankingListProps> = ({ otherUsers }) => {
   return (
-    <div className={styles.otherUsers}>
+    <div className={styles.containeRanking}>
+<div className={styles.otherUsers}>
       {otherUsers.map((user, index) => (
         <div
           key={user.rank}
@@ -33,6 +34,8 @@ const RankingList: React.FC<RankingListProps> = ({ otherUsers }) => {
         </div>
       ))}
     </div>
+    </div>
+    
   );
 };
 

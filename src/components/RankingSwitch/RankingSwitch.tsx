@@ -4,7 +4,7 @@ import Styles from './RankingSwitch.module.css';
 import { FaDotCircle } from 'react-icons/fa';
 
 export const RankingSwitch = () => {
-  const [isToday, setIsToday] = useState(true);
+  const [isToday, setIsToday] = useState(false);
 
   return (
     <div className={Styles.containerSwitch}>

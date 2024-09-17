@@ -36,7 +36,16 @@
   position: relative;
   border-radius: 50%;
   padding: 4px; /* Espacio para el borde */
-  /* El fondo dinámico se aplicará desde los estilos en línea */
+  padding: 2px; 
+  background: linear-gradient(to right, rgb(217, 203, 245),rgb(108, 74, 176), rgb(101, 53, 189), rgb(60, 33, 117));
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 .image {
@@ -44,6 +53,7 @@
   display: block;
   border: 4px solid transparent; /* Evitar que la imagen se superponga al borde */
   background-clip: padding-box;
+  
 }
 
 .userInfo {

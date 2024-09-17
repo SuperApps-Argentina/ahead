@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './RankingCard.module.css';
+import styles from './TopThreeRanking.module.css';
 
 interface User {
   name: string;
