@@ -1,5 +1,5 @@
 /* Estilos corregidos con borde en gradiente personalizado */
-.rankingCard {
+.topThreeContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 
-.top3 {
+.topThree {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -17,7 +17,7 @@
   width: 100%;
 }
 
-.userCard {
+.userAvatar {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +25,7 @@
   position: relative;
 }
 
-.userCard:nth-child(1) {
+.userAvatar:nth-child(1) {
   position: absolute;
   top: -40px; /* Ajusta este valor para centrar verticalmente */
   left: 50%;

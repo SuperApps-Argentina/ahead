@@ -9,19 +9,19 @@ interface User {
   gradient: string;  // Nuevo campo para el gradiente
 }
 
-interface RankingCardProps {
+interface TopThreeRankingProps {
   users: User[];
 }
 
-const RankingCard: React.FC<RankingCardProps> = ({ users }) => {
+const TopThreeRanking: React.FC<TopThreeRankingProps> = ({ users }) => {
   // Ordenamos los usuarios por puntaje
   const sortedUsers = users.sort((a, b) => b.score - a.score);
 
   return (
-    <div className={styles.rankingCard}>
-      <div className={styles.top3}>
+    <div className={styles.topThreeContainer}>
+      <div className={styles.topThree}>
         {sortedUsers.map((user, index) => (
-          <div key={index} className={styles.userCard} style={{ zIndex: 3 - index }}>
+          <div key={index} className={styles.userAvatar} style={{ zIndex: 3 - index }}>
             <div
               className={`${styles.userImage} ${index === 0 ? styles.crown : ''}`}
               style={{ background: user.gradient }}  // Aplicamos el gradiente dinámico aquí
@@ -45,4 +45,4 @@ const RankingCard: React.FC<RankingCardProps> = ({ users }) => {
   );
 };
 
-export default RankingCard;
+export default TopThreeRanking;
