@@ -30,7 +30,7 @@ const RankingList: React.FC<RankingListProps> = ({ otherUsers }) => {
           <div className={styles.userInfo}>
             <span className={styles.userName}>{user.name}</span>
           </div>
-          <span className={styles.userKm}>{user.score} km</span>
+          <span className={styles.userKm}>{user.score} </span>
         </div>
       ))}
     </div>
