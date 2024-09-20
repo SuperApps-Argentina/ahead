@@ -27,7 +27,7 @@ const TopThreeRanking: React.FC<TopThreeRankingProps> = ({ users }) => {
               style={{ background: user.gradient }}  // Aplicamos el gradiente dinámico aquí
             >
               <Image
-                src={user.imageUrl}
+                src={"https://www.clarin.com/img/2024/01/11/7AaLezyS4_600x600__1.jpg"}
                 alt={user.name}
                 width={100}
                 height={100}

@@ -1,3 +1,4 @@
+"use client";
 import { Header } from '@/components/Header/Header'
 import RankingCard from '@/components/TopThreeRanking/TopThreeRanking'
 import RankingList from '@/components/RankingList/RankingList';
@@ -7,22 +8,22 @@ import React from 'react'
 const users = [
   { 
     name: 'Lorena', 
-    score: 46896, 
-    imageUrl: '/images/lorena.jpg', 
+    score: 46.896, 
+    imageUrl: 'https://www.clarin.com/img/2024/01/11/7AaLezyS4_600x600__1.jpg', 
     rank: 1, 
     gradient: 'linear-gradient(319.29deg, #792AFF 5.26%, #FDF551 52.03%)' 
   },
   { 
     name: 'Patricia', 
-    score: 46722, 
-    imageUrl: '/images/patricia.jpg', 
+    score: 46.722, 
+    imageUrl: 'https://www.clarin.com/img/2024/01/11/7AaLezyS4_600x600__1.jpg', 
     rank: 2, 
     gradient: 'linear-gradient(135deg, #FF5733, #FFC300)' 
   },
   { 
     name: 'John', 
-    score: 46652, 
-    imageUrl: '/images/john.jpg', 
+    score: 46.652, 
+    imageUrl: 'https://www.clarin.com/img/2024/01/11/7AaLezyS4_600x600__1.jpg', 
     rank: 3, 
     gradient: 'linear-gradient(135deg, #28A745, #17A2B8)' 
   },
