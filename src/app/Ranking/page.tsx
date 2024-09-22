@@ -1,9 +1,11 @@
 "use client";
-import { Header } from '@/components/Header/Header'
-import RankingCard from '@/components/TopThreeRanking/TopThreeRanking'
+
+import { Header } from '@/components/Header/Header';
+import RankingCard from '@/components/TopThreeRanking/TopThreeRanking';
 import RankingList from '@/components/RankingList/RankingList';
-import { RankingSwitch } from '@/components/RankingSwitch/RankingSwitch'
-import React from 'react'
+import { RankingSwitch } from '@/components/RankingSwitch/RankingSwitch';
+import React from 'react';
+import { useRouter } from 'next/navigation'; // Importa useRouter
 
 const users = [
   { 
@@ -36,24 +38,30 @@ const otherUsers = [
   { name: 'Edgardo', score: '#45.432', imgSrc: '/images/edgardo.jpg', rank: 7 },
 ];
 
-
 const Page = () => {
+  const router = useRouter(); // Crea una instancia de useRouter
+
+  const handleBackClick = () => {
+    router.push('/'); // Navega de regreso a la página de inicio
+  };
+
   return (
     <>
       <div>
         <Header />
         <RankingSwitch />
+        <button onClick={handleBackClick} className="back-button">
+          Volver a Inicio
+        </button>
       </div>
       <div>
-        {/* Pasamos los tres primeros usuarios a RankingCard */}
-        <RankingCard users={users} />;
+        <RankingCard users={users} />
       </div>
       <div>
-        {/* Pasamos los usuarios restantes a RankingList */}
         <RankingList otherUsers={otherUsers} />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
