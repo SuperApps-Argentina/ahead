@@ -8,13 +8,16 @@ export const Header = () => {
   const router = useRouter(); // Crea una instancia de useRouter
 
   const handleBackClick = () => {
-    router.back(); // Navega a la página anterior
+    router.push('/'); // Navega de regreso a la página de inicio
   };
+
 
   return (
     <div className={Styles.container}>
       <div className={Styles.arrow} onClick={handleBackClick}> 
-        <IoIosArrowBack /> 
+       <button className={Styles.btnArrow} onClick={handleBackClick}>
+          <IoIosArrowBack /> 
+        </button> 
       </div>
       <div className={Styles.containerTitle}>
         <TfiCup /> Ranking

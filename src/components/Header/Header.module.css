@@ -16,3 +16,9 @@
     justify-content: center;
     gap: .5rem;
 }
+
+.btnArrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

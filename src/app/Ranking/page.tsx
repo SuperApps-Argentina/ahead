@@ -33,26 +33,18 @@ const users = [
 
 const otherUsers = [
   { name: 'Kevin', score: '#45.896', imgSrc: '', rank: 4 },
-  { name: 'Maria', score: '#45.652', imgSrc: '/images/maria.jpg', rank: 5 },
-  { name: 'Goyo', score: '#45.543', imgSrc: '/images/goyo.jpg', rank: 6 },
-  { name: 'Edgardo', score: '#45.432', imgSrc: '/images/edgardo.jpg', rank: 7 },
+  { name: 'Maria', score: '#45.652', imgSrc: '', rank: 5 },
+  { name: 'Goyo', score: '#45.543', imgSrc: '', rank: 6 },
+  { name: 'Edgardo', score: '#45.432', imgSrc: '', rank: 7 },
 ];
 
 const Page = () => {
-  const router = useRouter(); // Crea una instancia de useRouter
-
-  const handleBackClick = () => {
-    router.push('/'); // Navega de regreso a la página de inicio
-  };
 
   return (
     <>
       <div>
         <Header />
         <RankingSwitch />
-        <button onClick={handleBackClick} className="back-button">
-          Volver a Inicio
-        </button>
       </div>
       <div>
         <RankingCard users={users} />
