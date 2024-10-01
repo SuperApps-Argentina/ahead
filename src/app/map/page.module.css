@@ -1,0 +1,23 @@
+.container {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .debugButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .debugButton:hover {
+    background-color: #5a6268;
+  }
+  
