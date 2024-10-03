@@ -1,0 +1,36 @@
+/* src/components/LocationTracker/LocationTracker.module.css */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.p-4 {
+  padding: 16px; /* Ajusta según sea necesario */
+}
+
+.text-red-500 {
+  color: #f56565; /* Rojo para el mensaje de error */
+}

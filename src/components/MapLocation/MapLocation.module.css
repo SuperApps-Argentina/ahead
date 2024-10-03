@@ -1,0 +1,26 @@
+/* src/components/MapLocation/MapLocation.module.css */
+.mapContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map {
+  height: 400px;
+  width: 100%;
+}
+
+.button {
+  margin-top: 20px; /* Espaciado entre el mapa y el botón */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff; /* Cambia el color según tu preferencia */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Color al pasar el mouse */
+}
