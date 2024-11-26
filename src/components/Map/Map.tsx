@@ -32,7 +32,7 @@ const Map = () => {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition((position) => {
             const { latitude, longitude } = position.coords;
-            mapInstance.setView([latitude, longitude], 15);
+            mapInstance.setView([latitude, longitude], 5);
           });
         }
 

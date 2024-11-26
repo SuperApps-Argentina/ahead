@@ -1,19 +1,19 @@
 .containerMap {
-    width: 100%; /* Asegurarte de que el mapa ocupe todo el ancho */
-    height: 500px; /* Ajustar la altura según sea necesario */
-  }
-  .trackButton {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .trackButton:hover {
-    background-color: darkblue;
-  }
-  
+  width: 100%; /* Asegurarte de que el mapa ocupe todo el ancho */
+  height: 500px; /* Ajustar la altura según sea necesario */
+}
+
+.trackButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.trackButton:hover {
+  background-color: darkblue;
+}
