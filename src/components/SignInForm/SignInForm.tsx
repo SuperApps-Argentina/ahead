@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 
 import { doCredentialsLogin } from "@/actions/auth"
 
+import Style from "./SignInForm.module.css"
+
 
 export function SignInForm() {
 
@@ -30,28 +32,34 @@ export function SignInForm() {
   }
 
   return (
-    <form
-      className="flex flex-col bg-purple-950 w-10/12 p-4 m-auto rounded-sm"
+    <div className={Style.formContain}>
+      <h1 className={Style.titleForm}>Login</h1>
+ <form
+      className={Style.form}
       onSubmit={handleFormSubmit}
     >
-        {error && <div className="text-lg text-red-500">{error}</div>}
-        <label className="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
-          Email
+        {error && <div className={Style.messageError}>{error}</div>}
+        <label className={Style.labelEmail}>
+          Your Email
           <input 
-            className="bg-neutral-300 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+            className={Style.inputEmail}
+            placeholder="enter your email" 
             name="email" 
             type="email" 
           />
         </label>
-        <label className="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
-          Password
+        <label className={Style.labelPassword}>
+          Your Password
           <input 
-            className="bg-neutral-300 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+            className={Style.inputPassword}
+            placeholder="enter your password" 
             name="password" 
             type="password" 
             />
         </label>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Sign In</button>
+        <button className={Style.buttonForm}>Sign In</button>
     </form>
+    </div>
+   
   )
 }

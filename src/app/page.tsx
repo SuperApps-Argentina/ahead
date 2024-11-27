@@ -7,7 +7,7 @@ import { FaBiking, FaUser, FaTrophy } from 'react-icons/fa';
 import LevelProgress from "@/components/LevelProgress/LevelProgress";
 import styles from '../components/Actionbutton/ActionButton.module.css';
 import DailyProgress from "@/components/Daily/DailyProgress";
-import { Logout } from "@/components/Logout/Logout";
+import  Logout  from "@/components/Logout/Logout";
 import { useSession } from "next-auth/react";
 
 const Home: React.FC = () => {

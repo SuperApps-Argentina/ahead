@@ -1,11 +1,23 @@
 import { doLogout } from "@/actions/auth";
 
-export const Logout = () => (
-  <form action={doLogout}>
+import { signOut, useSession } from "next-auth/react";
+
+
+const Logout = () => {
+
+  const { data: session } = useSession();
+
+  const handleSignOut = async () => {
+    await signOut({callbackUrl: '/login?callbackUrl=http://localhost:3000/'})
+  };
+
+
+  return (
     <button
-      className="bg-blue-400 my-2 text-white p-2 rounded" 
-      type="submit">
-        Logout
+    onClick={handleSignOut}>
+      sign out
     </button>
-  </form>
-)
+  )
+}
+
+export default Logout
