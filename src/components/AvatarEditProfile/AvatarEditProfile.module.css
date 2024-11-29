@@ -1,0 +1,64 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 20px;
+    background-color: #1b1138; /* Fondo morado oscuro */
+    color: white; /* Texto en blanco */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Sombra ligera */
+    position: relative; /* Necesario para que el avatar sobresalga */
+    z-index: 1; /* Para asegurarse de que el header esté por encima */
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center; /* Alineación vertical */
+    gap: 16px; /* Separación entre avatar y texto */
+    position: relative; /* Base para el posicionamiento del avatar */
+  }
+  
+  .avatar {
+    width: 100px; /* Tamaño más grande para el avatar */
+    height: 100px;
+    border-radius: 50%; /* Forma circular */
+    object-fit: cover; /* Ajusta la imagen dentro del círculo */
+    border: 3px solid #7c00a1; /* Borde morado */
+    margin-top: -60px;
+    position: absolute; /* Para que el avatar sobresalga del contenedor */
+    transform: translateY(50%); /* Ajuste fino */
+  }
+  
+  .profile > div {
+    margin-left: 120px; /* Ajusta el texto al lado del avatar */
+  }
+  
+  .userName {
+    font-size: 22px; /* Tamaño más grande */
+    font-weight: 600; /* Semi-negrita */
+    margin: 0; /* Sin margen extra */
+    color: white; /* Texto blanco */
+  }
+  
+  .lastVisit {
+    font-size: 14px;
+    color: #a8a8b3; /* Gris claro */
+    margin: 0; /* Sin margen extra */
+  }
+  
+  .editButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white; /* Icono blanco */
+    transition: transform 0.2s ease; /* Animación al pasar el cursor */
+  }
+  
+  .editButton:hover {
+    transform: scale(1.1); /* Crece ligeramente al pasar el cursor */
+  }
+  
+  .editIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
