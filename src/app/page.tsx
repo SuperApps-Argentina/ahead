@@ -30,7 +30,7 @@ const Home: React.FC = () => {
   };
 
   const handleTop10Click = () => {
-    router.push('/ranking'); // Cambia a la ruta del ranking
+    router.push('/Ranking'); // Cambia a la ruta del ranking
   };
 
   return (
