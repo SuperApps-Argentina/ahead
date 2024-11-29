@@ -1,26 +1,51 @@
-/* src/components/MapLocation/MapLocation.module.css */
+/* MapLocation.module.css */
 .mapContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(90deg, #1B1337 0%, #1B1337 50%, #292047 50%, #292047 100%); /* Gradiente sin repetición */
+  overflow: hidden;
+  padding: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
+.title {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+}
+
 .map {
-  height: 400px;
   width: 100%;
+  height: 80%;
+  border-radius: 10px; /* Bordes redondeados en el mapa */
 }
 
 .button {
-  margin-top: 20px; /* Espaciado entre el mapa y el botón */
-  padding: 10px 20px;
-  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Botón circular */
+  background-color: #f2a365; /* Color de fondo del botón */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  position: absolute;
+  bottom: 10px; /* Posición en la parte inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra en el botón */
   cursor: pointer;
-  background-color: #007bff; /* Cambia el color según tu preferencia */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  transition: background-color 0.3s ease; /* Efecto de transición */
 }
 
 .button:hover {
-  background-color: #0056b3; /* Color al pasar el mouse */
+  background-color: #e58e41; /* Efecto hover */
+}
+
+.button svg {
+  color: white; /* Color del ícono */
 }
