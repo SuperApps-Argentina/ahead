@@ -5,9 +5,9 @@ import MapLocation from '../../components/MapLocation/MapLocation';
 import styles from './page.module.css';
 
 const MapPage: React.FC = () => {
-  const [position, setPosition] = useState<{ lat: number; lng: number } | null>(null);
-  const [path, setPath] = useState<{ lat: number; lng: number }[]>([]);
-  const [tracking, setTracking] = useState<boolean>(false);
+  // const [position, setPosition] = useState<{ lat: number; lng: number } | null>(null);
+  // const [path, setPath] = useState<{ lat: number; lng: number }[]>([]);
+  // const [tracking, setTracking] = useState<boolean>(false);
 
   const handleLocationUpdate = (newPosition: { lat: number; lng: number }) => {
     setPosition(newPosition);
