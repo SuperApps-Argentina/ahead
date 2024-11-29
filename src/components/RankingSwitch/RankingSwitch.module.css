@@ -1,0 +1,108 @@
+.containerSwitch {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.switch {
+  --_switch-bg-clr: #221844; /* Color de fondo del switch */
+  --_slider-bg-clr: rgba(28, 20, 56, 1);  /* Color del slider cuando está desactivado */
+  --_slider-bg-clr-on: rgba(28, 20, 56, 1); /* Color del slider cuando está activado */
+  --_label-padding: 0.40rem; /* Padding para las etiquetas ajustado para altura reducida */
+  --_switch-padding: 2px; /* Padding reducido alrededor del slider */
+  --_switch-easing: cubic-bezier(0.47, 1.64, 0.41, 0.8); /* Easing para el slider */
+  --_slider-width: 3rem; /* Ancho del slider */
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  position: relative;
+  border-radius: 9999px;
+  cursor: pointer;
+  width: 12rem;
+  background-color: var(--_switch-bg-clr);
+  padding: var(--_switch-padding);
+  height: var(--_slider-width); /* Altura del switch */
+}
+
+.switch input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.label {
+  display: grid;
+  place-content: center;
+  color: #fff;
+  padding: var(--_label-padding);
+  transition: opacity 300ms ease-in-out 150ms;
+  z-index: 1;
+  margin-left: .5rem;
+}
+
+.switchIndicator {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background-color: var(--_slider-bg-clr);
+  border-radius: 9999px;
+  box-sizing: border-box;
+  border: solid 2px #828bfd;
+  transition: background-color 500ms var(--_switch-easing); /* Transición para el cambio de color */
+}
+
+/* Animación para el deslizamiento del indicador */
+@keyframes slideToRight {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slideToLeft {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+.switch input:checked ~ .switchIndicator {
+  background-color: var(--_slider-bg-clr-on);
+  animation: slideToRight 500ms var(--_switch-easing) forwards; /* Animación al activarse */
+}
+
+.switch input:not(:checked) ~ .switchIndicator {
+  background-color: var(--_slider-bg-clr);
+  animation: slideToLeft 500ms var(--_switch-easing) forwards; /* Animación al desactivarse */
+}
+
+.switch input:checked ~ .label:first-of-type {
+  opacity: 0.75;
+}
+
+.switch input:not(:checked) ~ .label:last-of-type {
+  opacity: 0.75;
+}
+
+.switch input:checked ~ .label:last-of-type {
+  opacity: 1;
+}
+
+.switch input:not(:checked) ~ .label:first-of-type {
+  opacity: 1;
+}
