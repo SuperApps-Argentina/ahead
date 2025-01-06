@@ -52,4 +52,42 @@
   }
   
  
+  .avatarChangeContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .avatarInput {
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .buttonContainer {
+    margin-top: 20px;
+  }
+  
+  .saveButton, .cancelButton {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .saveButton {
+    background-color: green;
+    color: white;
+  }
+  
+  .cancelButton {
+    background-color: red;
+    color: white;
+  }
   
