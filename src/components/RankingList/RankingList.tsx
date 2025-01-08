@@ -1,30 +1,30 @@
 import React from 'react';
-import { FaRegUserCircle } from "react-icons/fa"; // Importa el icono
+import { FaRegUserCircle } from "react-icons/fa";
 import styles from './RankingList.module.css';
 
 interface User {
   name: string;
   score: string;
-  imgSrc?: string; // Hacemos que imgSrc sea opcional
+  imgSrc?: string;
   rank: number;
 }
 
 interface RankingListProps {
   otherUsers: User[];
+  isToday: boolean; // Prop para recibir el estado desde el componente padre
 }
 
-const RankingList: React.FC<RankingListProps> = ({ otherUsers }) => {
+const RankingList: React.FC<RankingListProps> = ({ otherUsers, isToday }) => {
   return (
-    <div className={styles.containerRanking}>
+    <div className={`${styles.containerRanking} ${isToday ? styles.today : styles.total}`}>
       <div className={styles.otherUsers}>
         {otherUsers.map((user, index) => (
           <div
             key={user.rank}
-            className={`${styles.otherUser} ${index % 2 === 1 ? styles.alternate : ''}`} // Aplicar fondo violeta a filas alternas
+            className={`${styles.otherUser} ${index % 2 === 1 ? styles.alternate : ''}`}
           >
             <span className={styles.userRank}>{user.rank}</span>
             
-            {/* Mostrar imagen si existe, si no, mostrar el icono */}
             {user.imgSrc ? (
               <img src={user.imgSrc} alt={`${user.name}'s profile`} className={styles.userImage} />
             ) : (

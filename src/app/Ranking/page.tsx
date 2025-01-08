@@ -4,8 +4,7 @@ import { Header } from '@/components/Header/Header';
 import RankingCard from '@/components/TopThreeRanking/TopThreeRanking';
 import RankingList from '@/components/RankingList/RankingList';
 import { RankingSwitch } from '@/components/RankingSwitch/RankingSwitch';
-import React from 'react';
-import { useRouter } from 'next/navigation'; // Importa useRouter
+import React, { useState } from 'react';
 
 const users = [
   { 
@@ -39,18 +38,19 @@ const otherUsers = [
 ];
 
 const Page = () => {
+  const [isToday, setIsToday] = useState(false);
 
   return (
     <>
       <div>
         <Header />
-        <RankingSwitch />
+        <RankingSwitch onSwitchChange={setIsToday} />
       </div>
       <div>
         <RankingCard users={users} />
       </div>
       <div>
-        <RankingList otherUsers={otherUsers} />
+        <RankingList otherUsers={otherUsers} isToday={isToday} />
       </div>
     </>
   );

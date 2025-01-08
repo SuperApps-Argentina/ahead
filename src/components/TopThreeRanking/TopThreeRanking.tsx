@@ -1,3 +1,4 @@
+//src\components\TopThreeRanking\TopThreeRanking.tsx
 import Image from 'next/image';
 import styles from './TopThreeRanking.module.css';
 

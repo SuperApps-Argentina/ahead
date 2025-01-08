@@ -2,7 +2,33 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center; /* Asegura que el componente esté centrado horizontalmente */
+  justify-content: center;
+  position: relative;
+  transition: transform 1s ease-in-out;
+  perspective: 1000px; /* Esto da un efecto de 3D */
+}
+
+.today {
+  transform: rotateY(0deg);
+}
+
+.total {
+  transform: rotateY(180deg);
+}
+
+.list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .otherUsers {
@@ -12,7 +38,7 @@
   align-items: center;
   width: 322px;
   height: 430px;
-  gap: 10px; /* Ajusta el espacio entre las filas de usuarios */
+  gap: 10px;
   border-radius: 18px;
   border: solid 1px #2c2154;
   padding: .5rem;
@@ -22,12 +48,12 @@
 .otherUser {
   display: flex;
   align-items: center;
-  justify-content: center; /* Asegura que los elementos estén centrados dentro de cada tarjeta */
+  justify-content: center;
   background-color: transparent;
   padding: 10px 20px;
   border-radius: 10px;
   width: 100%;
-  max-width: 500px; /* Controla el ancho máximo */
+  max-width: 500px;
   color: #828bfd;
   box-sizing: border-box;
 }
@@ -40,7 +66,7 @@
   font-size: 18px;
   font-weight: bold;
   color: #fff;
-  margin-right: 10px; /* Reducimos el espacio entre el rank y el icono */
+  margin-right: 10px;
 }
 
 .userInfo {
@@ -59,19 +85,19 @@
   font-size: 18px;
   font-weight: bold;
   color: #828bfd;
-  margin-left: auto; /* Empuja el valor de km hacia la derecha */
+  margin-left: auto;
 }
-
 
 .userIcon {
   font-size: 1.5rem;
   color: #828bfd;
   margin-right: 10px;
 }
+
 .userImage {
   width: 50px;
   height: 50px;
-  border-radius: 50%; /* Hace que la imagen sea circular */
+  border-radius: 50%;
   margin-right: 10px;
-  object-fit: cover; /* Asegura que la imagen se ajuste dentro del contenedor */
+  object-fit: cover;
 }
