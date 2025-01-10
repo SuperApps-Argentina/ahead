@@ -54,20 +54,28 @@
  
   .avatarChangeContainer {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
   }
   
   .avatar {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    max-width: 150px;  /* Tamaño máximo del avatar */
+    height: auto;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: cover;  /* Asegura que la imagen mantenga su aspecto */
   }
   
   .avatarInput {
-    padding: 5px;
+    margin-top: 10px;
     font-size: 14px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
   }
   
   .buttonContainer {
@@ -90,4 +98,46 @@
     background-color: red;
     color: white;
   }
+  .fileInputWrapper {
+    display: flex;
+    flex-direction: column; /* Colocar elementos en columna */
+    align-items: flex-start; /* Alinear texto a la izquierda */
+    
+  }
   
+  .fileInputText {
+    font-size: 12px;
+    color: #a8a8b3; /* Gris claro para el texto */
+    margin-top: 4px; /* Espaciado entre el input y el texto */
+  }
+  @media (max-width: 768px) {
+    .avatarChangeContainer {
+      /* Cambios para pantallas medianas (tabletas) */
+      padding: 20px;
+    }
+  
+    .avatar {
+      max-width: 120px;  /* Ajustamos el tamaño en pantallas más pequeñas */
+    }
+  
+    .avatarInput {
+      font-size: 12px;
+      padding: 4px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .avatarChangeContainer {
+      /* Cambios para pantallas pequeñas (móviles) */
+      padding: 15px;
+    }
+  
+    .avatar {
+      max-width: 100px;  /* Ajustamos aún más el tamaño en pantallas muy pequeñas */
+    }
+  
+    .avatarInput {
+      font-size: 10px;
+      padding: 3px;
+    }
+  }

@@ -3,7 +3,8 @@ import styles from "./viewprofile.module.css";
 
 interface ViewProfileProps {
   isEditing: boolean;
-  onSave: () => void;  // Función para manejar el guardado de los cambios
+  onSave: () => void;
+  onCancel:() => void;  // Función para manejar el guardado de los cambios
   avatarUrl: string;
   userName: string;
   lastVisit: string;
@@ -14,6 +15,7 @@ interface ViewProfileProps {
 const ViewProfile: React.FC<ViewProfileProps> = ({
   isEditing,
   onSave,
+  onCancel,
   avatarUrl,
   userName,
   lastVisit,

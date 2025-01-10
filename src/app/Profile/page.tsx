@@ -1,3 +1,5 @@
+// src/app/Profile/page.tsx
+
 "use client";
 
 import React, { useState } from 'react';
@@ -10,8 +12,21 @@ export default function ProfilePage() {
     const [userName, setUserName] = useState("Pedro Núñez");
     const [lastVisit, setLastVisit] = useState("28/10/2024");
 
+    // Guardar los valores originales al empezar a editar
+    const [originalData, setOriginalData] = useState({
+        avatarUrl,
+        userName,
+        lastVisit
+    });
+
     const handleEdit = () => {
         setIsEditing(true);
+        // Guardar los datos originales al comenzar la edición
+        setOriginalData({
+            avatarUrl,
+            userName,
+            lastVisit
+        });
     };
 
     const handleSave = () => {
@@ -21,10 +36,10 @@ export default function ProfilePage() {
 
     const handleCancel = () => {
         setIsEditing(false);
-        // Revertir la foto y demás datos a su valor original
-        setAvatarUrl("https://i.pinimg.com/736x/bf/a7/7c/bfa77c432a99302ee0b306fc17a45d03.jpg");
-        setUserName("Pedro Núñez");
-        setLastVisit("28/10/2024");
+        // Restaurar los datos originales
+        setAvatarUrl(originalData.avatarUrl);
+        setUserName(originalData.userName);
+        setLastVisit(originalData.lastVisit);
     };
 
     const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,13 +71,13 @@ export default function ProfilePage() {
                 <Form 
                     isEditing={isEditing} 
                     onSave={handleSave} 
+                    onCancel={handleCancel}
                     avatarUrl={avatarUrl} 
                     userName={userName}
                     lastVisit={lastVisit}
                     onAvatarChange={handleAvatarChange} 
                     onNameChange={handleNameChange} // Pasamos la función para manejar el nombre
                 />
-                
             </div>
         </div>
     );
@@ -78,3 +93,4 @@ const pageStyles: React.CSSProperties = {
     color: '#ffffff', 
     padding: '20px',
 };
+
