@@ -4,7 +4,7 @@ import { signIn, signOut } from '@/auth';
 
 export async function doLogout() {
   // Cambia el parámetro de redirección al cerrar sesión
-  await signOut({ redirectTo: '/login?callbackUrl=http://localhost:3000/' });
+  await signOut({ redirectTo: '/login?callbackUrl=http://localhost:3000/login' });
 }
 
 export async function doCredentialsLogin(formData: FormData) {
