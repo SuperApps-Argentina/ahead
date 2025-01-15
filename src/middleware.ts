@@ -13,7 +13,9 @@ export async function middleware(request: NextRequest) {
   // Si no hay sesión (token) y la ruta es protegida, redirigir al login
   if (!token && request.nextUrl.pathname.startsWith('/')) {
     const loginUrl = new URL('/login', request.url);
-    loginUrl.searchParams.set('callbackUrl', request.url);  // Pasar la URL original para redirigir después de iniciar sesión
+    // Si la URL tiene un 'callbackUrl', lo agregamos
+    const callbackUrl = request.nextUrl.pathname;
+    loginUrl.searchParams.set('callbackUrl', callbackUrl);  // Pasar la URL original para redirigir después de iniciar sesión
     return NextResponse.redirect(loginUrl);
   }
 
@@ -22,5 +24,5 @@ export async function middleware(request: NextRequest) {
 
 // Configurar las rutas protegidas que van a ser interceptadas por el middleware
 export const config = {
-  matcher: ['//:path*', '/dashboard/:path*', '/profile/:path*'], // Asegúrate de agregar las rutas que quieres proteger
+  matcher: [ '/dashboard/:path*', '/profile/:path*'], // Asegúrate de agregar las rutas que quieres proteger
 };

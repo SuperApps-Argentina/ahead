@@ -13,7 +13,7 @@ const Logout = () => {
 
 
   return (
-    <button
+    <button className="bg-white p-3 rounded-lg"
     onClick={handleSignOut}>
       sign out
     </button>

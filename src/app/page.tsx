@@ -1,5 +1,9 @@
-"use client";
+'use client';
 
+import { useEffect, useState } from 'react';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import { SignInForm } from "@/components/SignInForm/SignInForm";
 import Ranking from "../components/Ranking/Ranking";
 import Avatar from "@/components/Avatar/Avatar";
 import ActionButton from "../components/Actionbutton/Actionbutton";
@@ -7,33 +11,33 @@ import { FaBiking, FaUser, FaTrophy } from 'react-icons/fa';
 import LevelProgress from "@/components/LevelProgress/LevelProgress";
 import styles from '../components/Actionbutton/ActionButton.module.css';
 import DailyProgress from "@/components/Daily/DailyProgress";
-import  Logout  from "@/components/Logout/Logout";
-import { useSession } from "next-auth/react";
-import { SignInForm } from "@/components/SignInForm/SignInForm";
+import Logout from "@/components/Logout/Logout";
 
 const Home: React.FC = () => {
   const { data: session, status } = useSession();
+  const router = useRouter();
 
-  if (status === "loading") {
-    // Puedes agregar un cargador o algo para indicar que la sesión está cargando.
-    return <div>Loading...</div>;
+  const [loading, setLoading] = useState(true); // Añadimos un estado de carga
+
+  // Verifica si la sesión está lista, de lo contrario, muestra el login
+  useEffect(() => {
+    if (status === 'loading') {
+      return; // Solo espera si está cargando
+    }
+
+    if (status === 'unauthenticated') {
+      setLoading(false); // Si no está autenticado, muestra el login
+    } else {
+      setLoading(false); // Si está autenticado, muestra la página principal
+    }
+  }, [status]);
+
+  if (loading) {
+    return null; // No renderizamos nada mientras verificamos la sesión
   }
 
-  if (status === "unauthenticated") {
-    // Si no está autenticado, muestra el formulario de inicio de sesión.
+  if (status === 'unauthenticated') {
     return <SignInForm />;
-  }
-
-  function handleProfileClick(): void {
-    throw new Error("Function not implemented.");
-  }
-
-  function handleStartBikeClick(): void {
-    throw new Error("Function not implemented.");
-  }
-
-  function handleTop10Click(): void {
-    throw new Error("Function not implemented.");
   }
 
   return (
@@ -50,17 +54,17 @@ const Home: React.FC = () => {
         <ActionButton
           icon={<FaUser className={styles.IconSmall} />}
           size="small"
-          onClick={handleProfileClick}
+          onClick={() => console.log("Profile Clicked")}
         />
         <ActionButton
           icon={<FaBiking className={styles.IconLarge} />}
           size="large"
-          onClick={handleStartBikeClick}
+          onClick={() => console.log("Start Bike Clicked")}
         />
         <ActionButton
           icon={<FaTrophy className={styles.IconSmall} />}
           size="small"
-          onClick={handleTop10Click}
+          onClick={() => console.log("Top 10 Clicked")}
         />
       </div>
       <Logout />

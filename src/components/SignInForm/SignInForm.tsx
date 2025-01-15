@@ -1,24 +1,49 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { doCredentialsLogin } from '@/actions/auth';
+import { signIn, useSession } from 'next-auth/react'; // Usamos el signIn de next-auth
 import Style from './SignInForm.module.css';
 
 export function SignInForm() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+  const { status } = useSession(); // Revisamos el estado de la sesión (para evitar redirección si ya está logueado)
+  const [callbackUrl, setCallbackUrl] = useState<string>('/'); // Default callbackUrl a la raíz
+
+  useEffect(() => {
+    // Intentamos extraer el callbackUrl de la URL de la página actual
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlCallback = urlParams.get('callbackUrl');
+    if (urlCallback) {
+      setCallbackUrl(urlCallback);
+    }
+  }, []);
+
+  // Si la sesión está activa, redirigir al callbackUrl
+  useEffect(() => {
+    if (status === 'authenticated') {
+      router.push(callbackUrl); // Redirigir automáticamente a la página deseada
+    }
+  }, [status, router, callbackUrl]);
 
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    try {
-      const formData = new FormData(event.currentTarget);
-      const response = await doCredentialsLogin(formData);
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get('email')?.toString() || '';
+    const password = formData.get('password')?.toString() || '';
 
-      if (response.error) {
-        setError(response.error);
+    try {
+      const response = await signIn('credentials', {
+        redirect: false,  // Evitamos la redirección automática
+        email,
+        password,
+      });
+
+      if (response?.error) {
+        setError(response.error); // Manejamos el error si es que existe
       } else {
-        const callbackUrl = new URLSearchParams(window.location.search).get('callbackUrl') || '/';
-        router.push(callbackUrl); // Redirige al usuario a la URL solicitada originalmente
+        // Al recibir una respuesta exitosa, redirigimos al callbackUrl
+        router.push(callbackUrl); // Redirigir al callbackUrl configurado
       }
     } catch (error) {
       setError('Invalid credentials');
